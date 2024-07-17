@@ -38,3 +38,20 @@ app.route('/api/users/:id')
   .delete((req, res) => {
     res.send(`Delete Api: /users/:id`);
   })
+
+// Admin urls/paths
+const admin = express() // the sub app
+app.use('/admin', admin) // mount the sub app
+
+admin.get('/', (req, res) => {
+  console.log(admin.mountpath) // /admin
+  res.send('Admin Homepage')
+});
+admin.get('/users', (req, res) => {
+  res.json(users);
+});
+admin.route('/users/:id')
+  .get((req, res) => {
+    const user = users.find(item => item.id === Number(req.params.id));
+    res.json(user);
+  })
