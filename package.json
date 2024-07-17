@@ -1,0 +1,18 @@
+{
+  "name": "nodejs",
+  "version": "1.0.0",
+  "description": "Learn NodeJS and Practice with multiple examples",
+  "author": "Aqeel Malik",
+  "license": "ISC",
+  "main": "index.js",
+  "scripts": {
+    "start": "node --watch index"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "keywords": [
+    "nodejs",
+    "express"
+  ]
+}
