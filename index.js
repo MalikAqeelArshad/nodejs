@@ -56,3 +56,11 @@ admin.route("/users/:id").get((req, res) => {
    const user = users.find((item) => item.id === Number(req.params.id));
    res.json(user);
 });
+
+// Middleware with query parameters
+const auth = (req, res, next) => {
+   req.query.pass == 123 ? next() : res.sendStatus(401);
+};
+app.get("/auth", auth, (req, res) => {
+   res.send("Login successfully with middleware");
+});
