@@ -1,5 +1,5 @@
-const express = require("express");
-const adminRoutes = express.Router();
+const { Router } = require("express");
+const adminRoutes = Router();
 
 const { users, fnUser } = require("../helpers");
 

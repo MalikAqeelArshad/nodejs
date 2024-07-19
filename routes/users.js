@@ -1,11 +1,16 @@
-const express = require("express");
-const usersRoutes = express.Router();
+const { Router } = require("express");
+const usersRoutes = Router();
 
 const { users, fnUser } = require("../helpers");
 
-usersRoutes.get("/api/users", (req, res) => {
-   res.json(users);
-});
+usersRoutes
+   .route("/api/users")
+   .get((req, res) => {
+      res.json(users);
+   })
+   .post((req, res) => {
+      res.json(req.body);
+   });
 
 // Dynamic Api's
 usersRoutes

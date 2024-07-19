@@ -5,6 +5,7 @@ app.listen(port, () =>
    console.log(`Server running at: http://127.0.0.1:${port}`)
 );
 
+app.use(express.json());
 app.use(require("./routes/logs"));
 
 app.get("/", (req, res) => {
