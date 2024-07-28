@@ -6,7 +6,9 @@ app.listen(port, () =>
 );
 
 app.use(express.json());
-// app.use(require("./routes/logs"));
+
+const logs = require("./routes/logs");
+app.use(logs);
 
 app.get("/", (req, res) => {
    res.send("Welcome to Express NodeJS");
