@@ -1,6 +1,6 @@
 const { Router } = require("express");
-const logs = Router();
 const fs = require("fs");
+const logs = Router();
 
 logs.use((req, res, next) => {
    const log = `${new Date().toLocaleString()}: ${req.path}\n`;
